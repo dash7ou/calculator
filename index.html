@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Calculator</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="icon.jpg">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="bg">
+        </div>
+        <div class="main">
+            <div class="screen">     
+                <form name="form" name="textveiw">
+                    <input class="textveiw" name="textveiw">
+                </form>
+            </div>
+            <div class="keybord">
+                <div class="button-A">
+                    <input type="button" class="button" value="C" onclick="c()">
+                    <input type="button" class="button" value="<" onclick="back()">
+                    <input type="button" class="button" value="/"  onclick="insert('/')">
+                    <input type="button" class="button" value="X"  onclick="insert('*')">  
+                </div>
+                <div class="button-A">
+                    <input type="button" class="button" value="7"  onclick="insert(7)">
+                    <input type="button" class="button" value="8"  onclick="insert(8)">
+                    <input type="button" class="button" value="9"  onclick="insert(9)">
+                    <input type="button" class="button" value="-"  onclick="insert('-')"> 
+                </div>
+                
+                <div class="button-A">
+                    <input type="button" class="button" value="4"  onclick="insert(4)">
+                    <input type="button" class="button" value="5"  onclick="insert(5)">
+                    <input type="button" class="button" value="6"  onclick="insert(6)">
+                    <input type="button" class="button" value="+"  onclick="insert('+')"> 
+                </div>
+                <div class="after-eq">
+                    <input type="button" class="button" value="1" onclick="insert(1)">
+                    <input type="button" class="button" value="2"  onclick="insert(2)">
+                    <input type="button" class="button" value="3"  onclick="insert(3)"><br>
+                    <input type="button" class="button" id="zero" value="0" onclick="insert(0)">
+                    <input type="button" class="button" value="."  onclick="insert('.')">
+                </div>
+                <div class="equall">
+                    <input type="button" class="button" id="eq" value="=" onclick="equal()"> 
+                </div>
+                <!--<div class="last">
+
+                </div>-->
+            </div>
+        </div>
+        <script>
+            function insert(num){
+                document.form.textveiw.value = document.form.textveiw.value + num;
+            }
+            function equal(){
+                var exp = document.form.textveiw.value;
+                document.form.textveiw.value = eval(exp);
+            }
+            function c(){
+                document.form.textveiw.value="";
+            }
+            function back(){
+                var exp = document.form.textveiw.value;
+                document.form.textveiw.value = exp.slice(0,exp.length-1);
+            }
+        </script>
+
+    </body>
+</html>
